@@ -1,0 +1,33 @@
+#######################################################
+		COMANDOS VIM
+######################################################
+
+
+
+
+[esc]  R  <-- replace (es para sobre - escribir)
+esc <-- para salir del modo escritura
+[esc] + i <-- insertar (escribir incertando 
+[esc] + x <-- borrar 
+[esc] + dd <-- borrar renglon completo 
+
+-----------------------------------------------------
+	lista de compañeros:
+luis
+bosco
+pablo 
+alex
+edwin
+paola 
+javier
+fernando
+alejandra
+luis
+
+[esc] /alex --> busqueda 
+(si hay mas de dos elementos con el mismo nombre apretas "n" para cambiar )
+
+:w --> guardar 
+:wq --> guardar y salir
+:q! --> salir sin aceptar cambios
+

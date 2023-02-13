@@ -1,43 +1,27 @@
-from aplicacion.banco.cliente_bancario import ClienteBancario
+from Curva import Curva
+import matplotlib.pyplot as plt
+import math
 
-#============================================================
-''' try: intentar (correr las instrucciones)
-except: atrapar el error en una variable e
-e: se puede convertir a string '''
-#=============================================================
-
-#========================================================
-#Error por sacar mas dinero del que tiene
-#========================================================
-
-try:
-    cliente = ClienteBancario("Jaime Andrade", "Hernandez Sánchez", 28, 0.0)
-    cliente.guardarDinero(300)
-    print (cliente.imprimirInfo())
-    cliente.retirarDinero(400)
-    print(cliente.imprimirInfo())
-    
-#=========================================================
-#Exeption es el objeto más general de error
-#=========================================================
-except Exception as e:
-    print("Error: " + str(e))
-
-#=======================================================
-#Error por usar un atributo privado
-#=======================================================
-try:
-    print(cliente.__nombres)
-except Exception as ex:
-    print ("Error: " + str(ex))
-
-#============================================
-#Forma correcta
-#============================================
-print(cliente.nombres)
-
-
-
-
-
-
+np:int = 5
+a = []
+for j in range(0,np):
+    a.append((1.0)*math.cos(float(j*2*math.pi/np)))
+for i in range(0,np):
+    a.append((1.0)*math.sin(float(j*2*math.pi/np)))
+curva = Curva(a,2)
+n = 1000
+dx = 1.0/float(n)
+for i in range(0,n):
+    r = float(i)*dx
+    try:
+        [x,y] = curva.interpolacion(2,r)
+        plt.scatter(x,y,marker='o',color='blue')
+        [x,y] = curva.interpolacion(1,r)
+        plt.scatter(x,y,marker='o',color='black')
+        [x,y] = curva.interpolacion(0,r)
+        plt.scatter(x,y,marker='o',color='red')
+    except Exception as e:
+        print(e)
+        break
+#longitud
+plt.show()
